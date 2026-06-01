@@ -1,0 +1,6 @@
+/* Custom styles injected directly into the host page */
+.autofill-highlight {
+  outline: 2px solid #4cc9f0 !important;
+  box-shadow: 0 0 8px rgba(76, 201, 240, 0.5) !important;
+  transition: all 0.3s ease;
+}
