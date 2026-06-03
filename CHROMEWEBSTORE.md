@@ -64,7 +64,6 @@ English
 |------------|------|---------------|
 | `storage` | permissions | Required to save the applicant's profile details (experience, skills, contact info) and track application history locally on their machine. |
 | `tabs` | permissions | Required to detect the active tab's URL to check if the user is visiting a job application website, and to auto-extract the company and title details for the tracker. |
-| `scripting` | permissions | Required to execute form matching and filling logic on job board web pages dynamically. |
 | `https://*/*` and `http://*/*` | host_permissions | Required to run content scripts on diverse company application boards (Lever, Greenhouse, Workday) which host application forms under custom enterprise domains. |
 
 ---
@@ -103,7 +102,8 @@ All profile information, application trackers, and API credentials are kept loca
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
-| 1.0 | 2026-06-01 | Initial release with profile builder, form autofill, AI tailoring (nano/cloud), tracker, and CSV export. | Draft |
+| 1.1 | 2026-06-03 | Removed unused 'scripting' permission to comply with narrowest permissions policy. | Draft |
+| 1.0 | 2026-06-01 | Initial release with profile builder, form autofill, AI tailoring (nano/cloud), tracker, and CSV export. | Rejected |
 
 ---
 
@@ -111,3 +111,9 @@ All profile information, application trackers, and API credentials are kept loca
 
 ### Known Issues / Limitations
 - Security limits prevent programmatically setting local file paths for resume file uploads. The extension identifies and highlights file input elements to prompt manual file upload.
+
+### Rejection History
+| Date | Reason | Fix Applied | Resubmitted |
+|------|--------|-------------|-------------|
+| 2026-06-02 | Requested but did not use the 'scripting' permission. | Removed 'scripting' from manifest.json. | 2026-06-03 |
+
